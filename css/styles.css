@@ -27,13 +27,13 @@ button {
     cursor: pointer;
 }
 
-img{
+img {
     display: block;
 }
 
 .container{
     max-width: 1158px;
-    padding: 0 15px;
+    padding: 0 15px 0 15px;
     margin: 0 auto;
 }
 
@@ -79,7 +79,6 @@ body {
 }
 .page-nav{
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 .page-logo{
@@ -105,37 +104,37 @@ body {
 .menu {
     display: flex;
     gap: 40px;
-    text-align: center;
 }
 
-.menu-item,
 .menu-link{
-    font-family: Roboto;
-    font-weight: 500;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.32px;
-    padding: 24px 0;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-        color: #2e2f42;
-}
-.menu-link.active::after {
     display: block;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.5;
+        letter-spacing: 0.02em;
+        padding: 24px 0;
+        color: #2e2f42;
+    }
+    .menu-item .menu-link{
+        position: relative;
+            color: #404bbf;
+            transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    
+.menu-item .menu-link::after {
+    position: absolute;
+    content: '';
     width: 100%;
     height: 4px;
-    position: absolute;
     left: 0;
     bottom: -1px;
+    background-color: #404bbf;
     border-radius: 2px;
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    content: '';
-    background-color: #404bbf;
-    position: absolute;
 }
 
-.menu-link:focus,
-.menu-link:hover{
+.menu-link:hover,
+.menu-link:focus{
     color:#404bbf
 }
 .page-address{
@@ -147,7 +146,7 @@ body {
     gap: 40px;
 }
 
-.menu-address-item,
+.menu-address-item
 .menu-address-link{
     font-weight: 400;
         font-size: 16px;
@@ -158,8 +157,8 @@ body {
         transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.menu-address-lnk:focus,
-.menu-address-liunk:hover{
+.menu-address-link:focus
+.menu-address-link:hover{
     color:#404bbf
 }
 
@@ -442,7 +441,7 @@ body {
 /*======== Footer Styles ========*/
 
 .page-footer{
-    background: #2e2f42;
+    background-color: #2e2f42;
     padding-top: 100px;
     padding-bottom: 100px;
 }
@@ -450,7 +449,6 @@ body {
     display: flex;
     align-items: baseline;
 }
-
 
 .footer-container {
     margin-right: 120px;
@@ -485,6 +483,10 @@ body {
     color: #f4f4fd;
     max-width: 264px;
 }
+.footer-social{
+    margin-right: 80px;
+}
+
 .footer-social-text {
     font-weight: 500;
     font-size: 16px;
@@ -493,17 +495,14 @@ body {
     color: #fff;
     margin-bottom: 16px;
 }
-
 .footer-social-list {
     display: flex;
     gap: 16px;
 }
-
 .footer-social-item {
     width: 40px;
     height: 40px;
 }
-
 .footer-social-link {
     display: flex;
     align-items: center;
@@ -521,4 +520,249 @@ body {
 .footer-social-icons {
     fill: #f4f4fd;
 }
+.footer-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+.footer-email {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background-color: transparent;
+    padding-left: 16px;
+    height: 40px;
+    width: 264px;
+}
+.footer-email::placeholder {
+    color: #fff;
+}
+.footer-button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    background-color: #4d5ae5;
+    color: #fff;
+    min-width: 165px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+}
+.footer-button-icon {
+    margin-left: 16px;
+    fill: #fff;
+}
 
+/*========MODAL-OVERLAY========*/
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(46, 47, 66, 0.4);
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 408px;
+    min-height: 584px;
+    transform: translate(-50%, -50%);
+    background-color: #fcfcfc;
+    padding: 72px 24px 24px 24px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
+        0 2px 1px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-switcher-button {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e7e9fc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-switcher-button:hover,
+.modal-switcher-button:focus {
+    background-color: #404bbf;
+    border: none;
+    fill: #ffffff;
+}
+
+.modal-switcher-pic {
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-text {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    text-align: center;
+    color: #2e2f42;
+    margin-bottom: 16px;
+}
+
+.modal-container {
+    margin-bottom: 8px;
+}
+
+.modal-label {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+    display: block;
+    margin-bottom: 4px;
+}
+.modal-input-wrapper {
+    position: relative;
+}
+
+.modal-input {
+    padding-left: 38px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    outline: transparent;
+}
+
+.modal-input:focus {
+    border-color: #4d5ae5;
+}
+
+.modal-input-icon {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-input:focus+.modal-input-icon {
+    fill: #4d5ae5;
+}
+.modal-container-comment {
+    margin-bottom: 16px;
+}
+
+.modal-input-comment {
+    width: 100%;
+    height: 120px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    border-radius: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: rgba(46, 47, 66, 0.4);
+    outline: transparent;
+    resize: none;
+    padding: 8px 16px;
+    transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    background-color: transparent;
+}
+
+.modal-input-comment::placeholder {
+    color: rgba(46, 47, 66, 0.4);
+}
+.modal-input-comment:focus {
+    border-color: #4d5ae5;
+}
+
+.modal-checkbox {
+    margin-bottom: 24px;
+}
+
+.modal-privacy {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    color: #8e8f99;
+}
+.modal-privacy-check {
+    height: 16px;
+    width: 16px;
+    border-radius: 2px;
+    border: 1px solid rgba(46, 47, 66, 0.4);
+    display: inline-flex;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+}
+
+.modal-privacy-link {
+    line-height: 1.33333;
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #4d5ae5;
+}
+
+#user-privacy:checked+.modal-privacy>.modal-privacy-check {
+    background-color: #404bbf;
+    border: none;
+    fill: #f4f4fd;
+}
+.modal-button {
+    display: block;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+    background: #4d5ae5;
+    padding: 16px 32px;
+    margin: auto;
+    min-width: 169px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
