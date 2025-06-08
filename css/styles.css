@@ -603,6 +603,7 @@ body {
     border-radius: 4px;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .modal-switcher-button {
     position: absolute;
     top: 24px;
@@ -620,6 +621,7 @@ body {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
         border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .modal-switcher-button:hover,
 .modal-switcher-button:focus {
     background-color: #404bbf;
@@ -630,6 +632,7 @@ body {
 .modal-switcher-pic {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .modal-text {
     font-weight: 500;
     font-size: 16px;
@@ -653,6 +656,7 @@ body {
     display: block;
     margin-bottom: 4px;
 }
+
 .modal-input-wrapper {
     position: relative;
 }
@@ -680,9 +684,10 @@ body {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-input:focus+.modal-input-icon {
+.modal-input:focus+.modal-input-pic {
     fill: #4d5ae5;
 }
+
 .modal-container-comment {
     margin-bottom: 16px;
 }
@@ -707,6 +712,7 @@ body {
 .modal-input-comment::placeholder {
     color: rgba(46, 47, 66, 0.4);
 }
+
 .modal-input-comment:focus {
     border-color: #4d5ae5;
 }
@@ -722,6 +728,7 @@ body {
     letter-spacing: 0.04em;
     color: #8e8f99;
 }
+
 .modal-privacy-check {
     height: 16px;
     width: 16px;
@@ -748,6 +755,7 @@ body {
     border: none;
     fill: #f4f4fd;
 }
+
 .modal-button {
     display: block;
     font-weight: 500;
