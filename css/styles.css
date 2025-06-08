@@ -578,8 +578,7 @@ body {
     justify-content: center;
     align-items: center;
     background-color: rgba(46, 47, 66, 0.4);
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
 }
 
@@ -628,7 +627,7 @@ body {
     fill: #ffffff;
 }
 
-.modal-switcher-pic {
+.modal-switcher-icon {
     transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
