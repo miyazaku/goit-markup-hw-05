@@ -359,6 +359,7 @@ body {
 }
 /*======== PORTFOLIO SECTION ========*/
 
+
 .page-title-portfolio{
     font-weight: 700;
     font-size: 36px;
@@ -371,14 +372,11 @@ body {
 }
 
 .menu-portfolio{
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 120%;
-    letter-spacing: 0.002;
     display: flex;
     column-gap: 24px;
     row-gap: 48px;
     flex-wrap: wrap;
+    padding: 0;
 }
 .menu-portfolio-item {
     background-color: #FFF;
@@ -389,11 +387,10 @@ body {
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
         0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
-.conainer-card-portfolio{
+.container-card-portfolio{
     padding: 32px 16px;
     border-right: 1px solid var(--CORNFLOWER, #e7e9fc);
-    border-bottom: 1px solid var(--CORNFLOWER, #e7e9fc);
-    border-left: 1px solid var(--CORNFLOWER, #e7e9fc);
+    border-top: none;
 }
 
 .menu-portfolio-name{
@@ -402,7 +399,8 @@ body {
     line-height: 1.2;
     letter-spacing: 0.02em;
     color: #2e2f42;
-    max-width: 360px;
+    text-transform: capitalize;
+    margin-bottom: 8px;
     margin-bottom: 8px;
 }
 
@@ -562,10 +560,22 @@ body {
 }
 .footer-button-icon {
     margin-left: 16px;
-    fill: #fff;
+    fill:currentColor;
 }
 
 /*========MODAL-OVERLAY========*/
+.backdrop{
+    opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+    
+    .backdrop.is-open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
 
 .modal-overlay {
     position: fixed;
